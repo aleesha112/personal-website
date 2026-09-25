@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aleesha | Remote Sensing &amp; GIS Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <script>
+    document.documentElement.classList.add("js");
+    try {
+      var saved = localStorage.getItem("theme");
+      if (saved) document.documentElement.setAttribute("data-theme", saved);
+    } catch (e) {}
+  </script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="progress" id="progress"></div>
+
+  <!-- ================= NAVBAR (unchanged) ================= -->
+  <header class="navbar">
+    <a href="#home" class="logo">Aleesha<span>.</span></a>
+    <nav id="nav-links" class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#hobbies">Hobbies</a>
+      <a href="#interests">Interests</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button id="theme-btn" class="icon-btn" aria-label="Toggle theme">☀️</button>
+      <button id="menu-btn" class="icon-btn menu-btn" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <!-- ================= HERO (UNCHANGED — do not modify) ================= -->
+  <section id="home" class="hero">
+    <div class="hero-text">
+      <span class="badge">👋 Welcome to my personal website</span>
+      <h1>Hi, I'm <span class="gradient-text">Aleesha</span></h1>
+      <h2 class="role">I am a <span id="typing"></span><span class="cursor"></span></h2>
+      <p class="intro">
+        I am a 6th semester student of Remote Sensing and GIS. I enjoy working with
+        satellite data and maps, and I am learning web development so that I can build
+        Web GIS applications and work as a freelancer.
+      </p>
+      <div class="facts">
+        <div class="fact"><span class="fact-label">Program</span><span class="fact-value">BS Remote Sensing &amp; GIS</span></div>
+        <div class="fact"><span class="fact-label">Semester</span><span class="fact-value">6th Semester</span></div>
+        <div class="fact"><span class="fact-label">Department</span><span class="fact-value">Remote Sensing &amp; GIS</span></div>
+        <div class="fact"><span class="fact-label">University</span><span class="fact-value">PMAS Arid University</span></div>
+      </div>
+      <div class="hero-btns">
+        <a href="#education" class="btn primary">Explore My Work</a>
+        <a href="#contact" class="btn ghost">Contact Me</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <svg class="globe" viewBox="0 0 400 400" role="img" aria-label="Animated globe with a satellite orbiting around it">
+        <defs>
+          <radialGradient id="globeFill" cx="35%" cy="30%" r="75%">
+            <stop offset="0%" style="stop-color:var(--primary);stop-opacity:0.45" />
+            <stop offset="100%" style="stop-color:var(--secondary);stop-opacity:0.05" />
+          </radialGradient>
+        </defs>
+        <circle cx="200" cy="200" r="140" fill="url(#globeFill)" class="globe-line" stroke-width="2" />
+        <g class="globe-line" fill="none" stroke-width="1">
+          <ellipse cx="200" cy="200" rx="140" ry="35" />
+          <ellipse cx="200" cy="130" rx="121" ry="30" />
+          <ellipse cx="200" cy="270" rx="121" ry="30" />
+          <ellipse cx="200" cy="79" rx="70" ry="17" />
+          <ellipse cx="200" cy="321" rx="70" ry="17" />
+        </g>
+        <g class="globe-line" fill="none" stroke-width="1">
+          <ellipse cx="200" cy="200" rx="45" ry="140" />
+          <ellipse cx="200" cy="200" rx="90" ry="140" />
+          <ellipse cx="200" cy="200" rx="125" ry="140" />
+          <line x1="200" y1="60" x2="200" y2="340" />
+        </g>
+        <g>
+          <circle cx="165" cy="150" r="4" class="pin" />
+          <circle cx="165" cy="150" r="4" class="pin-ring">
+            <animate attributeName="r" values="4;18" dur="2.4s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.9;0" dur="2.4s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="235" cy="225" r="4" class="pin" />
+          <circle cx="235" cy="225" r="4" class="pin-ring">
+            <animate attributeName="r" values="4;18" dur="2.4s" begin="0.8s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.9;0" dur="2.4s" begin="0.8s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="160" cy="255" r="4" class="pin" />
+          <circle cx="160" cy="255" r="4" class="pin-ring">
+            <animate attributeName="r" values="4;18" dur="2.4s" begin="1.6s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.9;0" dur="2.4s" begin="1.6s" repeatCount="indefinite" />
+          </circle>
+        </g>
+        <g transform="rotate(-25 200 200)">
+          <path id="orbitPath" class="orbit" d="M 10 200 A 190 60 0 1 1 390 200 A 190 60 0 1 1 10 200" />
+          <g>
+            <rect x="-6" y="-4" width="12" height="8" rx="2" class="sat-body" />
+            <rect x="-19" y="-2" width="11" height="4" class="sat-panel" />
+            <rect x="8" y="-2" width="11" height="4" class="sat-panel" />
+            <animateMotion dur="14s" repeatCount="indefinite">
+              <mpath href="#orbitPath" />
+            </animateMotion>
+          </g>
+        </g>
+      </svg>
+      <span class="float-chip c1">🛰️ Remote Sensing</span>
+      <span class="float-chip c2">🗺️ GIS</span>
+      <span class="float-chip c3">🔥 Wildfire Monitoring</span>
+    </div>
+  </section>
+
+  <!-- ================= EDUCATION (redesigned: numbered rows, no timeline dots) ================= -->
+  <section id="education" class="section">
+    <div class="section-head reveal">
+      <span class="eyebrow">Academic Journey</span>
+      <h2>Education &amp; Experience</h2>
+    </div>
+
+    <div class="edu-rows">
+      <div class="edu-row reveal">
+        <span class="edu-num">01</span>
+        <div class="edu-body">
+          <div class="edu-top">
+            <h3>BS Remote Sensing and GIS</h3>
+            <span class="date">Present</span>
+          </div>
+          <p class="muted">PMAS Arid University · 6th Semester</p>
+          <p>Courses include Remote Sensing, GIS, Cloud Computing for Geomatics and Web GIS Applications.</p>
+        </div>
+      </div>
+      <div class="edu-row reveal" style="--d:0.1s">
+        <span class="edu-num">02</span>
+        <div class="edu-body">
+          <div class="edu-top">
+            <h3>FSc (ICS) — Intermediate in Computer Science</h3>
+            <span class="date">EDIT: Year - Year</span>
+          </div>
+          <p class="muted">Punjab College</p>
+          <p>Studied Mathematics, Physics and Computer Science, which built the base for my interest in programming.</p>
+        </div>
+      </div>
+      <div class="edu-row reveal" style="--d:0.2s">
+        <span class="edu-num">03</span>
+        <div class="edu-body">
+          <div class="edu-top">
+            <h3>Internship — NASTP</h3>
+            <span class="date">1 Month</span>
+          </div>
+          <p>Worked on satellite meteorology concepts and remote sensing data visualization. Gained hands-on experience with Python programming (Google Colab, Earth Engine), NDVI analysis, GIS applications, and handling satellite imagery (LRIT and HRIT data). Also developed professional skills in report writing, research and analysis, presentation, and teamwork.</p>
+        </div>
+      </div>
+      <div class="edu-row reveal" style="--d:0.3s">
+        <span class="edu-num">04</span>
+        <div class="edu-body">
+          <div class="edu-top">
+            <h3>Internship — Metavystic</h3>
+            <span class="date">1 Month</span>
+          </div>
+          <p>Worked as a web developer, building and maintaining web pages. Also gained experience in georeferencing and digitizing spatial data.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ PROJECTS (redesigned: clean list rows with SVG icons, not emoji cards) ============ -->
+    <h3 class="sub-title reveal">Projects</h3>
+    <div class="proj-list">
+
+      <div class="proj-row featured reveal">
+        <div class="proj-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8 6 6 9.5 6 13a6 6 0 0 0 12 0c0-1.7-.6-3.1-1.5-4.5-.3 1.5-1 2.3-1.8 2.7C15.3 8.7 14 6.7 12 2Z"/><path d="M9.5 14.5c0 1.5 1 2.5 2.5 2.5s2.5-1 2.5-2.5c0-1-.5-1.8-1.2-2.6-.2 1-.6 1.5-1.1 1.7-.4-1-.9-1.7-1.7-3-1 1.2-1 2.6-1 3.9Z"/></svg>
+        </div>
+        <div class="proj-body">
+          <div class="proj-top">
+            <h4>Wildfire Monitoring Web Application</h4>
+            <span class="chip-live">Deployed</span>
+          </div>
+          <p>
+            A full stack MERN application, built as both a degree and portfolio project, that pulls real fire-detection
+            data from NASA FIRMS (VIIRS for near real-time data, MODIS for archive data back to 2000) and displays
+            active fires across Pakistan on a live interactive map.
+          </p>
+          <ul class="feature-list">
+            <li>Live interactive fire map with 4 map themes and a Pakistan boundary overlay</li>
+            <li>Fire history from 2000 to today, with a time-lapse slider and Chart.js analytics</li>
+            <li>Custom Haversine-based spatial clustering to identify high-risk zones</li>
+            <li>Groq-hosted AI chatbot that answers questions about the fire data</li>
+            <li>JWT auth with OTP email verification, plus a watchlist with proximity email alerts</li>
+          </ul>
+          <div class="tags small"><span>React</span><span>Node.js</span><span>Express</span><span>MongoDB Atlas</span><span>Leaflet.js</span><span>NASA FIRMS</span></div>
+          <div class="proj-links">
+            <!-- EDIT: replace # with your live Vercel link -->
+            <a href="#" target="_blank" rel="noopener" class="proj-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
+              Live Site
+            </a>
+            <!-- EDIT: replace # with your GitHub repo link -->
+            <a href="#" target="_blank" rel="noopener" class="proj-link">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-row reveal" style="--d:0.1s">
+        <div class="proj-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4l3 8 4-16 3 8h6"/></svg>
+        </div>
+        <div class="proj-body">
+          <div class="proj-top"><h4>GeoMap Pakistan</h4></div>
+          <p>A Web GIS application built as a university GIS lab assignment, using Leaflet.js with a Supabase PostgreSQL backend.</p>
+          <div class="tags small"><span>Leaflet.js</span><span>Supabase</span><span>PostgreSQL</span></div>
+          <div class="proj-links">
+            <!-- EDIT: replace # with your Netlify link -->
+            <a href="#" target="_blank" rel="noopener" class="proj-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
+              Live Site
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-row reveal" style="--d:0.2s">
+        <div class="proj-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        </div>
+        <div class="proj-body">
+          <div class="proj-top"><h4>E-commerce Platform</h4></div>
+          <p>A full stack e-commerce website with a product catalog and admin features.</p>
+          <div class="tags small"><span>MongoDB</span><span>Express</span><span>React</span><span>Node.js</span></div>
+        </div>
+      </div>
+
+      <div class="proj-row reveal" style="--d:0.3s">
+        <div class="proj-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18"/><path d="M8 4v5"/></svg>
+        </div>
+        <div class="proj-body">
+          <div class="proj-top"><h4>Admin Dashboard</h4></div>
+          <p>A dashboard interface for managing data, built with a modern React setup.</p>
+          <div class="tags small"><span>React</span><span>Vite</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SKILLS (redesigned: numbered percentage, icon soft-skill chips) ================= -->
+  <section id="skills" class="section">
+    <div class="section-head reveal">
+      <span class="eyebrow">What I Can Do</span>
+      <h2>Skills</h2>
+    </div>
+
+    <div class="two-col">
+      <div class="card reveal">
+        <h3>Technical Skills</h3>
+        <div class="skill"><div class="skill-top"><span>Remote Sensing</span><span>85%</span></div><div class="bar"><div class="fill" data-width="85%"></div></div></div>
+        <div class="skill"><div class="skill-top"><span>GIS (ArcGIS / QGIS)</span><span>80%</span></div><div class="bar"><div class="fill" data-width="80%"></div></div></div>
+        <div class="skill"><div class="skill-top"><span>Google Earth Engine</span><span>70%</span></div><div class="bar"><div class="fill" data-width="70%"></div></div></div>
+        <div class="skill"><div class="skill-top"><span>HTML &amp; CSS</span><span>75%</span></div><div class="bar"><div class="fill" data-width="75%"></div></div></div>
+        <div class="skill"><div class="skill-top"><span>JavaScript</span><span>65%</span></div><div class="bar"><div class="fill" data-width="65%"></div></div></div>
+        <div class="skill"><div class="skill-top"><span>React / MERN Stack</span><span>60%</span></div><div class="bar"><div class="fill" data-width="60%"></div></div></div>
+      </div>
+
+      <div class="card reveal" style="--d:0.15s">
+        <h3>Soft Skills</h3>
+        <ul class="icon-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20h5v-2a4 4 0 0 0-3-3.87"/><path d="M9 20H4v-2a4 4 0 0 1 3-3.87"/><circle cx="9" cy="7" r="4"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Teamwork</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>Presentation</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>Problem Solving</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Time Management</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.4 8.7 8.7 0 0 1-4-.9L3 20l1-5.3a8.4 8.4 0 0 1-1-4A8.4 8.4 0 0 1 11.5 3 8.4 8.4 0 0 1 21 11.5Z"/></svg>Communication</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>Fast Learner</li>
+        </ul>
+
+        <h3 class="mt">Tools I Use</h3>
+        <div class="tags">
+          <span>VS Code</span>
+          <span>Git &amp; GitHub</span>
+          <span>ArcGIS</span>
+          <span>QGIS</span>
+          <span>Google Earth Engine</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= HOBBIES (redesigned: horizontal icon strip, no big emoji cards) ================= -->
+  <section id="hobbies" class="section">
+    <div class="section-head reveal">
+      <span class="eyebrow">Outside Studies</span>
+      <h2>Hobbies</h2>
+    </div>
+    <div class="strip">
+      <div class="strip-item reveal">
+        <span class="strip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+        <div><h4>Coding</h4><p class="muted">Building small websites and apps</p></div>
+      </div>
+      <div class="strip-item reveal" style="--d:0.1s">
+        <span class="strip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg></span>
+        <div><h4>Reading</h4><p class="muted">Learning something new every day</p></div>
+      </div>
+      <div class="strip-item reveal" style="--d:0.2s">
+        <span class="strip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg></span>
+        <div><h4>Exploring Maps</h4><p class="muted">Looking at the world from above</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= INTERESTS (redesigned: horizontal icon strip) ================= -->
+  <section id="interests" class="section">
+    <div class="section-head reveal">
+      <span class="eyebrow">What Excites Me</span>
+      <h2>Interests</h2>
+    </div>
+    <p class="center-text reveal">
+      I am interested in Remote Sensing, Web GIS and cloud-based geospatial analysis, and in
+      building web applications that show spatial data on interactive maps.
+    </p>
+    <div class="strip">
+      <div class="strip-item reveal">
+        <span class="strip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.5-2 5-2 5s3.5-.5 5-2c.8-.8 1-2 1-2s-1.2.2-2 1c0 0-.5-1.5 1-3l4-4"/><path d="m14 4 6 6-9 9-6-6Z"/></svg></span>
+        <div><h4>Remote Sensing</h4></div>
+      </div>
+      <div class="strip-item reveal" style="--d:0.1s">
+        <span class="strip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z"/></svg></span>
+        <div><h4>Web GIS</h4></div>
+      </div>
+      <div class="strip-item reveal" style="--d:0.2s">
+        <span class="strip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a6 6 0 1 1 1.4-11.8A5 5 0 0 1 20 9a4 4 0 0 1-.5 10Z"/></svg></span>
+        <div><h4>Cloud Geospatial Analysis</h4></div>
+      </div>
+      <div class="strip-item reveal" style="--d:0.3s">
+        <span class="strip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg></span>
+        <div><h4>Higher Studies (MS)</h4></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT (unchanged from before) ================= -->
+  <section id="contact" class="section">
+    <div class="section-head reveal">
+      <span class="eyebrow">Let's Connect</span>
+      <h2>Contact</h2>
+    </div>
+
+    <div class="contact-wrap">
+      <div class="contact-info card reveal">
+        <span class="status"><span class="dot"></span> Open to freelance work and collaborations</span>
+        <h3>Let's work together</h3>
+        <p>
+          Do you have a project involving Remote Sensing, GIS or web development?
+          I would be happy to hear about it. Send me an email or connect with me on LinkedIn
+          and I will get back to you as soon as possible.
+        </p>
+        <div class="contact-btns">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=aleeshaafzal112@gmail.com" target="_blank" rel="noopener" class="btn primary">Send an Email</a>
+          <a href="https://www.linkedin.com/in/aleesha-afzal-989454319/" target="_blank" rel="noopener" class="btn ghost">Connect on LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="contact-list">
+        <a class="contact-row card reveal" style="--d:0.1s" href="mailto:aleeshaafzal112@gmail.com">
+          <span class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-10 6L2 7"></path></svg>
+          </span>
+          <span class="contact-text"><span class="contact-label">Email</span><span class="contact-value">aleeshaafzal112@gmail.com</span></span>
+          <span class="arrow">↗</span>
+        </a>
+        <a class="contact-row card reveal" style="--d:0.2s" href="https://www.linkedin.com/in/aleesha-afzal-989454319/" target="_blank" rel="noopener">
+          <span class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </span>
+          <span class="contact-text"><span class="contact-label">LinkedIn</span><span class="contact-value">Aleesha Afzal</span></span>
+          <span class="arrow">↗</span>
+        </a>
+        <a class="contact-row card reveal" style="--d:0.3s" href="https://github.com/aleesha112" target="_blank" rel="noopener">
+          <span class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </span>
+          <span class="contact-text"><span class="contact-label">GitHub</span><span class="contact-value">github.com/aleesha112</span></span>
+          <span class="arrow">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Aleesha | Web GIS Applications (MET418) | COMSATS University Islamabad</p>
+  </footer>
+
+  <button id="to-top" class="to-top" aria-label="Back to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

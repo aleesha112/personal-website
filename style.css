@@ -163,19 +163,14 @@ h1, h2, h3, h4 { line-height: 1.25; }
 }
 
 .hero h1 { font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 800; }
-.role-badge {
-  display: inline-block;
-  padding: 8px 20px;
-  margin: 10px 0 18px;
-  border-radius: 30px;
-  background: var(--grad);
-  color: #062a2a;
-  font-weight: 600;
-  font-size: 1.05rem;
-  transition: opacity 0.4s ease;
+.role { font-size: clamp(1.1rem, 2.4vw, 1.6rem); font-weight: 500; margin: 8px 0 18px; }
+#typing { color: var(--primary); font-weight: 600; display: inline-block; }
+#typing {
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
-.role-badge.fade-out {
+#typing.fade-out {
   opacity: 0;
+  transform: translateY(-8px);
 }
 
 .intro { max-width: 560px; color: var(--muted); margin-bottom: 26px; }

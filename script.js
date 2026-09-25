@@ -43,14 +43,13 @@ const roles = [
   "Freelancer in the Making"
 ];
 const typingEl = document.getElementById("typing");
-const roleBadge = document.querySelector(".role-badge");
 let roleIndex = 0;
 
 function showRole() {
-  roleBadge.classList.add("fade-out");
+  typingEl.classList.add("fade-out");
   setTimeout(() => {
     typingEl.textContent = roles[roleIndex];
-    roleBadge.classList.remove("fade-out");
+    typingEl.classList.remove("fade-out");
     roleIndex = (roleIndex + 1) % roles.length;
   }, 400);
 }

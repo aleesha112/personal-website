@@ -34,7 +34,7 @@ themeBtn.addEventListener("click", () => {
 });
 
 // ============================================================
-// 3) Typing effect in the hero section
+// 3) Rotating role text (fade + slide effect)
 // ============================================================
 const roles = [
   "Remote Sensing Student",
@@ -43,32 +43,19 @@ const roles = [
   "Freelancer in the Making"
 ];
 const typingEl = document.getElementById("typing");
+const roleBadge = document.querySelector(".role-badge");
 let roleIndex = 0;
-let charIndex = 0;
-let deleting = false;
 
-function typeEffect() {
-  const word = roles[roleIndex];
-
-  // Add or remove one letter
-  charIndex += deleting ? -1 : 1;
-  typingEl.textContent = word.substring(0, charIndex);
-
-  let delay = deleting ? 45 : 90;
-
-  if (!deleting && charIndex === word.length) {
-    // Finished typing the word: wait, then start deleting
-    deleting = true;
-    delay = 1400;
-  } else if (deleting && charIndex === 0) {
-    // Finished deleting: move to the next word
-    deleting = false;
+function showRole() {
+  roleBadge.classList.add("fade-out");
+  setTimeout(() => {
+    typingEl.textContent = roles[roleIndex];
+    roleBadge.classList.remove("fade-out");
     roleIndex = (roleIndex + 1) % roles.length;
-    delay = 400;
-  }
-  setTimeout(typeEffect, delay);
+  }, 400);
 }
-typeEffect();
+showRole();
+setInterval(showRole, 2600);
 
 // ============================================================
 // 4) Reveal elements and animate skill bars when they appear
